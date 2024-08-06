@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orders</title>
+  <link href="../output.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="relative flex min-h-svh w-full bg-white max-lg:flex-col lg:bg-[#F4F4F5]">
+    <!--side Nevbar  -->
+    <div class="fixed inset-y-0 left-0 w-64 max-lg:hidden">
+      <nav class="flex h-full min-h-0 flex-col">
+        <!-- Header Nav -->
+        <div class="flex flex-col border-b border-zinc-950/5 p-4">
+          <div class="relative hover:bg-neutral-200 rounded-xl">
+            <button id="toggleButton" class="cursor-default flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left  font-medium text-zinc-950 sm:py-2 sm:text-sm/5">
+              <div class="absolute left-1/2 top-1/2"></div>
+              <div class="inline-grid shrink-0 *:rounded-full">
+                <img class="size-6" src="../assets/catalyst.svg" alt="" />
+              </div>
+              <div class="">Catalyst</div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 ms-24" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"></path>
+              </svg>
+            </button>
+            <div id="toggleList" class="z-30 absolute mt-2 -right-8 w-60 bg-white rounded-2xl outline-zinc-500 shadow-lg hidden">
+              <div class="py-1 space-y-1">
+                  <div class="px-4 py-1 hover:bg-blue-500 hover:text-white text-zinc-500 rounded-xl mx-1">                    
+                    <a href="#" class="flex flex-row">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 mt-0.5 mr-4" viewBox="0 0 16 16" fill="currentColor">
+                        <path fill-rule="evenodd" d="M6.955 1.45A.5.5 0 0 1 7.452 1h1.096a.5.5 0 0 1 .497.45l.17 1.699c.484.12.94.312 1.356.562l1.321-1.081a.5.5 0 0 1 .67.033l.774.775a.5.5 0 0 1 .034.67l-1.08 1.32c.25.417.44.873.561 1.357l1.699.17a.5.5 0 0 1 .45.497v1.096a.5.5 0 0 1-.45.497l-1.699.17c-.12.484-.312.94-.562 1.356l1.082 1.322a.5.5 0 0 1-.034.67l-.774.774a.5.5 0 0 1-.67.033l-1.322-1.08c-.416.25-.872.44-1.356.561l-.17 1.699a.5.5 0 0 1-.497.45H7.452a.5.5 0 0 1-.497-.45l-.17-1.699a4.973 4.973 0 0 1-1.356-.562L4.108 13.37a.5.5 0 0 1-.67-.033l-.774-.775a.5.5 0 0 1-.034-.67l1.08-1.32a4.971 4.971 0 0 1-.561-1.357l-1.699-.17A.5.5 0 0 1 1 8.548V7.452a.5.5 0 0 1 .45-.497l1.699-.17c.12-.484.312-.94.562-1.356L2.629 4.107a.5.5 0 0 1 .034-.67l.774-.774a.5.5 0 0 1 .67-.033L5.43 3.71a4.97 4.97 0 0 1 1.356-.561l.17-1.699ZM6 8c0 .538.212 1.026.558 1.385l.057.057a2 2 0 0 0 2.828-2.828l-.058-.056A2 2 0 0 0 6 8Z"
+                        clip-rule="evenodd"></path>
+                      </svg>
+                      <p class="">Settings</p>
+                    </a>
+                  </div>
+                  <hr class="mx-4">
+                  <div class="px-4 py-1 hover:bg-blue-500 hover:text-white text-zinc-500 rounded-xl mx-1">                    
+                    <a href="#" class="flex flex-row">
+                      <img class="h-5 mt-0.5 mr-4 rounded-2xl" src="../assets/catalyst.svg" alt="">
+                      <p>Catalyst</p>
+                    </a>
+                  </div>
+                  <!-- <div class="px- hover:bg-blue-500 hover:text-white text-zinc-500 rounded-xl mx-1">                    
+                    <a href="#" class="flex flex-row items-center">
+                      <svg class="size-14 text-[30px] font-medium uppercase" viewBox="0 0 100 100" aria-hidden="true">
+                        <text x="50%" y="50%" alignment-baseline="middle" dominant-baseline="middle" text-anchor="middle" dy=".35em">BE</text>
+                      </svg>
+                      <p>Big Events</p>
+                    </a>
+                    
+                  </div> -->
+                  <hr class="mx-4">
+                  <div class="px-4 py-1 hover:bg-blue-500 hover:text-white text-zinc-500 rounded-xl mx-1">                    
+                    <a href="#" class="flex flex-row">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 mt-0.5 mr-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon"><path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z"></path></svg>
+                      <p class="">New Team...</p>
+                    </a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- // -->
+        <div class="flex flex-1 flex-col overflow-y-auto p-4">
+          <div class="flex flex-col gap-0.5 gap-y-0.5">
+            <div class="relative hover:bg-neutral-200 text-zinc-500 hover:text-zinc-900 rounded-xl">
+              <div class="absolute inset-y-2 -left-4 w-0.5 rounded-full bg-zinc-950" style="transform: none; transform-origin: 50% 50% 0px"></div>
+              <a class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium sm:py-2 sm:text-sm/5" type="button" href="../index.html" >
+                <div class="absolute left-1/2 top-1/2 "></div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z" clip-rule="evenodd"></path>
+                </svg>
+                <div class="truncate">Home</div>
+              </a>
+            </div>
+            <div class="relative hover:bg-neutral-200 text-zinc-500 hover:text-zinc-900 rounded-xl">
+              <a class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium sm:py-2 sm:text-sm/5" type="button" href="../events.html">
+                <div class="absolute left-1/2 top-1/2"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path d="M2 4.25A2.25 2.25 0 0 1 4.25 2h6.5A2.25 2.25 0 0 1 13 4.25V5.5H9.25A3.75 3.75 0 0 0 5.5 9.25V13H4.25A2.25 2.25 0 0 1 2 10.75v-6.5Z">
+                  </path>
+                  <path d="M9.25 7A2.25 2.25 0 0 0 7 9.25v6.5A2.25 2.25 0 0 0 9.25 18h6.5A2.25 2.25 0 0 0 18 15.75v-6.5A2.25 2.25 0 0 0 15.75 7h-6.5Z">
+                  </path>
+                </svg>
+                <div class="truncate">Events</div>
+              </a>
+            </div>
+            <div class="relative hover:bg-neutral-200 text-zinc-500 hover:text-zinc-900 rounded-xl">
+              <a class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium sm:py-2 sm:text-sm/5" type="button" href="../orders.html">
+                <div class="absolute left-1/2 top-1/2"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M15.75 3A2.25 2.25 0 0 1 18 5.25v1.214c0 .423-.277.788-.633 1.019A2.997 2.997 0 0 0 16 10c0 1.055.544 1.982 1.367 2.517.356.231.633.596.633 1.02v1.213A2.25 2.25 0 0 1 15.75 17H4.25A2.25 2.25 0 0 1 2 14.75v-1.213c0-.424.277-.789.633-1.02A2.998 2.998 0 0 0 4 10a2.997 2.997 0 0 0-1.367-2.517C2.277 7.252 2 6.887 2 6.463V5.25A2.25 2.25 0 0 1 4.25 3h11.5ZM13.5 7.396a.75.75 0 0 0-1.5 0v1.042a.75.75 0 0 0 1.5 0V7.396Zm0 4.167a.75.75 0 0 0-1.5 0v1.041a.75.75 0 0 0 1.5 0v-1.041Z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <div class="truncate">Orders</div>
+              </a>
+            </div>
+            <div class="relative hover:bg-neutral-200 text-zinc-500 hover:text-zinc-900 rounded-xl">
+              <a class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium sm:py-2 sm:text-sm/5" type="button" href="../settings.html">
+                <div class="absolute left-1/2 top-1/2"></div>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M7.84 1.804A1 1 0 0 1 8.82 1h2.36a1 1 0 0 1 .98.804l.331 1.652a6.993 6.993 0 0 1 1.929 1.115l1.598-.54a1 1 0 0 1 1.186.447l1.18 2.044a1 1 0 0 1-.205 1.251l-1.267 1.113a7.047 7.047 0 0 1 0 2.228l1.267 1.113a1 1 0 0 1 .206 1.25l-1.18 2.045a1 1 0 0 1-1.187.447l-1.598-.54a6.993 6.993 0 0 1-1.929 1.115l-.33 1.652a1 1 0 0 1-.98.804H8.82a1 1 0 0 1-.98-.804l-.331-1.652a6.993 6.993 0 0 1-1.929-1.115l-1.598.54a1 1 0 0 1-1.186-.447l-1.18-2.044a1 1 0 0 1 .205-1.251l1.267-1.114a7.05 7.05 0 0 1 0-2.227L1.821 7.773a1 1 0 0 1-.206-1.25l1.18-2.045a1 1 0 0 1 1.187-.447l1.598.54A6.992 6.992 0 0 1 7.51 3.456l.33-1.652ZM10 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+                  clip-rule="evenodd"></path>
+                </svg>
+                <div class="truncate">Settings</div>
+              </a>
+            </div>
+          </div>
+          <div class="max-lg:hidden flex flex-col gap-0.5 gap-y-1 mt-5">
+            <h3 class="mb-1 px-2 text-xs/6 font-medium text-zinc-500">
+              Upcoming Events
+            </h3>
+            <div class="relative hover:bg-neutral-200 rounded-xl">
+              <a class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 sm:py-2 sm:text-sm/5" type="button" href="./Bear_Hug.html">
+                <div class="absolute left-1/2 top-1/2"></div>
+                Bear Hug: Live in Concert
+              </a>
+            </div>
+            <div class="relative hover:bg-neutral-200 rounded-xl">
+              <a class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 sm:py-2 sm:text-sm/5 "type="button" href="./Six_Fingers.html">
+                <div class="absolute left-1/2 top-1/2"></div>
+                  Six Fingers — DJ Set
+              </a>
+            </div>
+            <div class="relative hover:bg-neutral-200 rounded-xl">
+              <a class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 sm:py-2 sm:text-sm/5"type="button" href="./Look_Same.html">
+                <div class="absolute left-1/2 top-1/2"></div>
+                We All Look The Same
+              </a>
+            </div>
+            <div class="relative hover:bg-neutral-200 rounded-xl">
+              <a class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 sm:py-2 sm:text-sm/5" type="button" href="./Viking_People.html">
+                <div class="absolute left-1/2 top-1/2"></div>
+                Viking People
+              </a>
+            </div>
+          </div>
+          <div class="mt-8 flex-1"></div>
+          <div class="flex flex-col gap-0.5">
+            <div class="relative hover:bg-neutral-200 text-zinc-500 hover:text-zinc-900 rounded-xl">
+              <a class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium sm:py-2 sm:text-sm/5" type="button" href="#">
+                <div class="absolute left-1/2 top-1/2"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" >
+                  <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0ZM8.94 6.94a.75.75 0 1 1-1.061-1.061 3 3 0 1 1 2.871 5.026v.345a.75.75 0 0 1-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 1 0 8.94 6.94ZM10 15a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd"></path>
+                </svg>
+                <div class="truncate">Support</div>
+              </a>
+            </div>
+            <div class="relative hover:bg-neutral-200 text-zinc-500 hover:text-zinc-900 rounded-xl">
+              <a class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium sm:py-2 sm:text-sm/5" type="button" href="#">
+                <div class="absolute left-1/2 top-1/2"></div>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path d="M15.98 1.804a1 1 0 0 0-1.96 0l-.24 1.192a1 1 0 0 1-.784.785l-1.192.238a1 1 0 0 0 0 1.962l1.192.238a1 1 0 0 1 .785.785l.238 1.192a1 1 0 0 0 1.962 0l.238-1.192a1 1 0 0 1 .785-.785l1.192-.238a1 1 0 0 0 0-1.962l-1.192-.238a1 1 0 0 1-.785-.785l-.238-1.192ZM6.949 5.684a1 1 0 0 0-1.898 0l-.683 2.051a1 1 0 0 1-.633.633l-2.051.683a1 1 0 0 0 0 1.898l2.051.684a1 1 0 0 1 .633.632l.683 2.051a1 1 0 0 0 1.898 0l.683-2.051a1 1 0 0 1 .633-.633l2.051-.683a1 1 0 0 0 0-1.898l-2.051-.683a1 1 0 0 1-.633-.633L6.95 5.684ZM13.949 13.684a1 1 0 0 0-1.898 0l-.184.551a1 1 0 0 1-.632.633l-.551.183a1 1 0 0 0 0 1.898l.551.183a1 1 0 0 1 .633.633l.183.551a1 1 0 0 0 1.898 0l.184-.551a1 1 0 0 1 .632-.633l.551-.183a1 1 0 0 0 0-1.898l-.551-.184a1 1 0 0 1-.633-.632l-.183-.551Z">
+                    </path>
+                </svg>
+                <div class="truncate">Changelog</div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Footer nav -->
+        <div class="max-lg:hidden flex flex-col border-t border-zinc-950/5 p-4">
+          <div class="relative hover:bg-neutral-200 rounded-xl">
+            <button id="toggleButton1" class="cursor-default flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 sm:py-2 sm:text-sm/5">
+              <div class="absolute left-1/2 top-1/2"></div>
+                <div class="flex min-w-0 items-center gap-3">
+                  <div class="size-10 inline-grid shrink-0 align-middle">
+                    <img class="size-full rounded-lg" src="../assets/erica.jpg" alt="" />
+                  </div>
+                  <div class="min-w-0">
+                    <div class="block truncate text-sm/5 font-medium text-zinc-950">Erica</div>
+                    <div class="block truncate text-xs/5 font-normal text-zinc-500">erica@example.com</div>
+                  </div>
+                </div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 ms-10" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M11.78 9.78a.75.75 0 0 1-1.06 0L8 7.06 5.28 9.78a.75.75 0 0 1-1.06-1.06l3.25-3.25a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd"></path>
+              </svg>
+            </button>
+            <div id="toggleList1" class="z-30 absolute mt-2 bottom-0 -right-8 w-60 bg-white rounded-2xl outline-zinc-500 shadow-lg hidden">
+              <div class="py-1 space-y-1">
+                <div class="px-4 py-2 hover:bg-blue-500 hover:text-white text-zinc-500 rounded-xl mx-1">
+                  <a href="#" class="flex flex-row">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 mt-0.5 mr-4" viewBox="0 0 16 16" fill="currentColor">
+                      <path fill-rule="evenodd" d="M15 8A7 7 0 1 1 1 8a7 7 0 0 1 14 0Zm-5-2a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM8 9c-1.825 0-3.422.977-4.295 2.437A5.49 5.49 0 0 0 8 13.5a5.49 5.49 0 0 0 4.294-2.063A4.997 4.997 0 0 0 8 9Z" clip-rule="evenodd"></path>
+                    </svg>
+                    <p class="">My account</p>
+                  </a>
+                </div>
+                <hr class="mx-4">
+                <div class="px-4 py-2 hover:bg-blue-500 hover:text-white text-zinc-500 rounded-xl mx-1">
+                  <a href="#" class="flex flex-row">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 mt-0.5 mr-4" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M8.5 1.709a.75.75 0 0 0-1 0 8.963 8.963 0 0 1-4.84 2.217.75.75 0 0 0-.654.72 10.499 10.499 0 0 0 5.647 9.672.75.75 0 0 0 .694-.001 10.499 10.499 0 0 0 5.647-9.672.75.75 0 0 0-.654-.719A8.963 8.963 0 0 1 8.5 1.71Zm2.34 5.504a.75.75 0 0 0-1.18-.926L7.394 9.17l-1.156-.99a.75.75 0 1 0-.976 1.138l1.75 1.5a.75.75 0 0 0 1.078-.106l2.75-3.5Z" clip-rule="evenodd"></path></svg>
+                    <p class="">Privacy policy</p>
+                  </a>
+                </div>
+                <div class="px-4 py-2 hover:bg-blue-500 hover:text-white text-zinc-500 rounded-xl mx-1">
+                  <a href="#" class="flex flex-row">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 mt-0.5 mr-4" viewBox="0 0 20 20" fill="currentColor" ><path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0ZM8.94 6.94a.75.75 0 1 1-1.061-1.061 3 3 0 1 1 2.871 5.026v.345a.75.75 0 0 1-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 1 0 8.94 6.94ZM10 15a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd"></path>
+                    </svg>
+                    <p class="">Share feedback</p>
+                  </a>
+                </div>
+                <hr class="mx-4">
+                <div class="px-4 py-2 hover:bg-blue-500 hover:text-white text-zinc-500 rounded-xl mx-1">
+                  <a href="#" class="flex flex-row">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 mt-0.5 mr-4" viewBox="0 0 16 16" fill="currentColor" ><path fill-rule="evenodd" d="M2 4.75A2.75 2.75 0 0 1 4.75 2h3a2.75 2.75 0 0 1 2.75 2.75v.5a.75.75 0 0 1-1.5 0v-.5c0-.69-.56-1.25-1.25-1.25h-3c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h3c.69 0 1.25-.56 1.25-1.25v-.5a.75.75 0 0 1 1.5 0v.5A2.75 2.75 0 0 1 7.75 14h-3A2.75 2.75 0 0 1 2 11.25v-6.5Zm9.47.47a.75.75 0 0 1 1.06 0l2.25 2.25a.75.75 0 0 1 0 1.06l-2.25 2.25a.75.75 0 1 1-1.06-1.06l.97-.97H5.25a.75.75 0 0 1 0-1.5h7.19l-.97-.97a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"></path>
+                    </svg>
+                    <p class="">Sign out</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- Open Nevbar -->
+    <div class="flex items-center px-4 lg:hidden">
+      <div class="py-2.5">
+        <div class="relative">
+          <button id="openNav" aria-label="Open navigation" class="cursor-default relative flex min-w-0 items-center gap-3 rounded-lg p-2 text-left text-base/6 font-medium text-zinc-950 sm:text-sm/5" type="button">
+            <div class="absolute left-1/2 top-1/2"></div>
+            <svg  class="h-5" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M2 6.75C2 6.33579 2.33579 6 2.75 6H17.25C17.6642 6 18 6.33579 18 6.75C18 7.16421 17.6642 7.5 17.25 7.5H2.75C2.33579 7.5 2 7.16421 2 6.75ZM2 13.25C2 12.8358 2.33579 12.5 2.75 12.5H17.25C17.6642 12.5 18 12.8358 18 13.25C18 13.6642 17.6642 14 17.25 14H2.75C2.33579 14 2 13.6642 2 13.25Z">
+              </path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="min-w-0 flex-1">
+        <nav class="flex flex-1 items-center gap-4 py-2.5">
+          <div class="-ml-4 flex-1"></div>
+            <div class="flex items-center gap-3">
+              <div class="relative">
+                <button  id="toggleButton3" class="cursor-default relative flex min-w-0 items-center gap-3 rounded-lg p-2 text-left text-base/6 font-medium text-zinc-950 sm:text-sm/5">
+                  <div class="absolute left-1/2 top-1/2"></div>
+                  <div class="inline-grid shrink-0">
+                    <img class="size-7 rounded-md" src="../assets/erica.jpg" alt="">
+                  </div>
+                </button>
+                <div id="toggleList3" class="z-30 absolute mt-2  -right-4 w-60 bg-white rounded-2xl outline-zinc-500 shadow-lg hidden">
+                  <div class="py-1 space-y-1">
+                    <div class="px-4 py-2 hover:bg-blue-500 hover:text-white text-zinc-500 rounded-xl mx-1">
+                      <a href="#" class="flex flex-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 mt-0.5 mr-4" viewBox="0 0 16 16" fill="currentColor">
+                          <path fill-rule="evenodd" d="M15 8A7 7 0 1 1 1 8a7 7 0 0 1 14 0Zm-5-2a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM8 9c-1.825 0-3.422.977-4.295 2.437A5.49 5.49 0 0 0 8 13.5a5.49 5.49 0 0 0 4.294-2.063A4.997 4.997 0 0 0 8 9Z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p class="">My account</p>
+                      </a>
+                    </div>
+                    <hr class="mx-4">
+                    <div class="px-4 py-2 hover:bg-blue-500 hover:text-white text-zinc-500 rounded-xl mx-1">
+                      <a href="#" class="flex flex-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 mt-0.5 mr-4" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M8.5 1.709a.75.75 0 0 0-1 0 8.963 8.963 0 0 1-4.84 2.217.75.75 0 0 0-.654.72 10.499 10.499 0 0 0 5.647 9.672.75.75 0 0 0 .694-.001 10.499 10.499 0 0 0 5.647-9.672.75.75 0 0 0-.654-.719A8.963 8.963 0 0 1 8.5 1.71Zm2.34 5.504a.75.75 0 0 0-1.18-.926L7.394 9.17l-1.156-.99a.75.75 0 1 0-.976 1.138l1.75 1.5a.75.75 0 0 0 1.078-.106l2.75-3.5Z" clip-rule="evenodd"></path></svg>
+                        <p class="">Privacy policy</p>
+                      </a>
+                    </div>
+                    <div class="px-4 py-2 hover:bg-blue-500 hover:text-white text-zinc-500 rounded-xl mx-1">
+                      <a href="#" class="flex flex-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 mt-0.5 mr-4" viewBox="0 0 20 20" fill="currentColor" ><path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0ZM8.94 6.94a.75.75 0 1 1-1.061-1.061 3 3 0 1 1 2.871 5.026v.345a.75.75 0 0 1-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 1 0 8.94 6.94ZM10 15a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p class="">Share feedback</p>
+                      </a>
+                    </div>
+                    <hr class="mx-4">
+                    <div class="px-4 py-2 hover:bg-blue-500 hover:text-white text-zinc-500 rounded-xl mx-1">
+                      <a href="#" class="flex flex-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 mt-0.5 mr-4" viewBox="0 0 16 16" fill="currentColor" ><path fill-rule="evenodd" d="M2 4.75A2.75 2.75 0 0 1 4.75 2h3a2.75 2.75 0 0 1 2.75 2.75v.5a.75.75 0 0 1-1.5 0v-.5c0-.69-.56-1.25-1.25-1.25h-3c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h3c.69 0 1.25-.56 1.25-1.25v-.5a.75.75 0 0 1 1.5 0v.5A2.75 2.75 0 0 1 7.75 14h-3A2.75 2.75 0 0 1 2 11.25v-6.5Zm9.47.47a.75.75 0 0 1 1.06 0l2.25 2.25a.75.75 0 0 1 0 1.06l-2.25 2.25a.75.75 0 1 1-1.06-1.06l.97-.97H5.25a.75.75 0 0 1 0-1.5h7.19l-.97-.97a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"></path>
+                        </svg>
+                        <p class="">Sign out</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+      </div>
+    </div>
+      <!-- Backdrop -->
+    <div id="backdrop" class="fixed inset-0 bg-black opacity-50 hidden z-20"></div>
+    <div id="sideNav" class="fixed top-0 left-0 z-30 bg-white min-h-svh  w-64 lg:hidden transform -translate-x-full transition-transform duration-300">
+      <!-- Close Navbar Button -->
+      <div class="-mb-3 px-4 pt-3">
+        <span class="relative">
+          <button id="closeNav" type="button" class="cursor-default relative flex min-w-0 items-center gap-3 rounded-lg p-2 text-left text-base/6 font-medium text-zinc-950 sm:text-sm/5">
+            <span class="absolute left-1/2 top-1/2"></span>
+              <svg  class="h-5 " viewBox="0 0 20 20">
+                <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z">
+                </path>
+              </svg>
+          </button>
+        </span>
+      </div>
+      <nav class="flex flex-col">
+        <div class="flex flex-col border-b border-zinc-950/5 p-4">
+          <div class="relative hover:bg-neutral-200 rounded-xl">
+            <button id="toggleButton2" class="cursor-default flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left  font-medium text-zinc-950 sm:py-2 sm:text-sm/5">
+              <div class="absolute left-1/2 top-1/2"></div>
+              <div class="inline-grid shrink-0 *:rounded-full">
+                <img class="size-5" src="../assets/catalyst.svg" alt="" />
+              </div>
+              <div class="truncate">Catalyst</div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 ms-24" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"></path>
+              </svg>
+            </button>
+            <div id="toggleList2" class="z-30 absolute mt-2 -right-8 w-60 bg-white rounded-2xl outline-zinc-500 shadow-lg hidden">
+              <div class="py-1 space-y-1">
+                  <div class="px-4 py-1 hover:bg-blue-500 hover:text-white text-zinc-500 rounded-xl mx-1">                    
+                    <a href="#" class="flex flex-row">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 mt-0.5 mr-4" viewBox="0 0 16 16" fill="currentColor">
+                        <path fill-rule="evenodd" d="M6.955 1.45A.5.5 0 0 1 7.452 1h1.096a.5.5 0 0 1 .497.45l.17 1.699c.484.12.94.312 1.356.562l1.321-1.081a.5.5 0 0 1 .67.033l.774.775a.5.5 0 0 1 .034.67l-1.08 1.32c.25.417.44.873.561 1.357l1.699.17a.5.5 0 0 1 .45.497v1.096a.5.5 0 0 1-.45.497l-1.699.17c-.12.484-.312.94-.562 1.356l1.082 1.322a.5.5 0 0 1-.034.67l-.774.774a.5.5 0 0 1-.67.033l-1.322-1.08c-.416.25-.872.44-1.356.561l-.17 1.699a.5.5 0 0 1-.497.45H7.452a.5.5 0 0 1-.497-.45l-.17-1.699a4.973 4.973 0 0 1-1.356-.562L4.108 13.37a.5.5 0 0 1-.67-.033l-.774-.775a.5.5 0 0 1-.034-.67l1.08-1.32a4.971 4.971 0 0 1-.561-1.357l-1.699-.17A.5.5 0 0 1 1 8.548V7.452a.5.5 0 0 1 .45-.497l1.699-.17c.12-.484.312-.94.562-1.356L2.629 4.107a.5.5 0 0 1 .034-.67l.774-.774a.5.5 0 0 1 .67-.033L5.43 3.71a4.97 4.97 0 0 1 1.356-.561l.17-1.699ZM6 8c0 .538.212 1.026.558 1.385l.057.057a2 2 0 0 0 2.828-2.828l-.058-.056A2 2 0 0 0 6 8Z"
+                        clip-rule="evenodd"></path>
+                      </svg>
+                      <p class="">Settings</p>
+                    </a>
+                  </div>
+                  <hr class="mx-4">
+                  <div class="px-4 py-1 hover:bg-blue-500 hover:text-white text-zinc-500 rounded-xl mx-1">                    
+                    <a href="#" class="flex flex-row">
+                      <img class="h-5 mt-0.5 mr-4 rounded-2xl" src="../assets/catalyst.svg" alt="">
+                      <p>Catalyst</p>
+                    </a>
+                  </div>
+                  <!-- <div class="px- hover:bg-blue-500 hover:text-white text-zinc-500 rounded-xl mx-1">                    
+                    <a href="#" class="flex flex-row items-center">
+                      <svg class="size-14 text-[30px] font-medium uppercase" viewBox="0 0 100 100" aria-hidden="true">
+                        <text x="50%" y="50%" alignment-baseline="middle" dominant-baseline="middle" text-anchor="middle" dy=".35em">BE</text>
+                      </svg>
+                      <p>Big Events</p>
+                    </a>
+                    
+                  </div> -->
+                  <hr class="mx-4">
+                  <div class="px-4 py-1 hover:bg-blue-500 hover:text-white text-zinc-500 rounded-xl mx-1">                    
+                    <a href="#" class="flex flex-row">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 mt-0.5 mr-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon"><path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z"></path></svg>
+                      <p class="">New Team...</p>
+                    </a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-1 flex-col overflow-y-auto p-4">
+            <div class="flex flex-col gap-0.5">
+              <div class="relative">
+                <div class="absolute inset-y-2 -left-4 w-0.5 rounded-full bg-zinc-950" style="transform: none; transform-origin: 50% 50% 0px"></div>
+                <a class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 sm:py-2 sm:text-sm/5"
+                type="button" href="./index.html" >
+                  <div class="absolute left-1/2 top-1/2 "></div>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z" clip-rule="evenodd"></path>
+                  </svg>
+                  <div class="truncate">Home</div>
+                </a>
+              </div>
+              <div class="relative">
+                <a class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 sm:py-2 sm:text-sm/5" type="button" href="./events.html">
+                  <div class="absolute left-1/2 top-1/2"></div>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path d="M2 4.25A2.25 2.25 0 0 1 4.25 2h6.5A2.25 2.25 0 0 1 13 4.25V5.5H9.25A3.75 3.75 0 0 0 5.5 9.25V13H4.25A2.25 2.25 0 0 1 2 10.75v-6.5Z">
+                    </path>
+                    <path d="M9.25 7A2.25 2.25 0 0 0 7 9.25v6.5A2.25 2.25 0 0 0 9.25 18h6.5A2.25 2.25 0 0 0 18 15.75v-6.5A2.25 2.25 0 0 0 15.75 7h-6.5Z">
+                    </path>
+                  </svg>
+                  <div class="truncate">Events</div>
+                </a>
+              </div>
+              <div class="relative">
+                <a class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 sm:py-2 sm:text-sm/5" type="button" href="./orders.html">
+                  <div class="absolute left-1/2 top-1/2"></div>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M15.75 3A2.25 2.25 0 0 1 18 5.25v1.214c0 .423-.277.788-.633 1.019A2.997 2.997 0 0 0 16 10c0 1.055.544 1.982 1.367 2.517.356.231.633.596.633 1.02v1.213A2.25 2.25 0 0 1 15.75 17H4.25A2.25 2.25 0 0 1 2 14.75v-1.213c0-.424.277-.789.633-1.02A2.998 2.998 0 0 0 4 10a2.997 2.997 0 0 0-1.367-2.517C2.277 7.252 2 6.887 2 6.463V5.25A2.25 2.25 0 0 1 4.25 3h11.5ZM13.5 7.396a.75.75 0 0 0-1.5 0v1.042a.75.75 0 0 0 1.5 0V7.396Zm0 4.167a.75.75 0 0 0-1.5 0v1.041a.75.75 0 0 0 1.5 0v-1.041Z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <div class="truncate">Orders</div>
+                </a>
+              </div>
+              <div class="relative">
+                <a class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 sm:py-2 sm:text-sm/5" type="button" href="./settings.html">
+                  <div class="absolute left-1/2 top-1/2"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M7.84 1.804A1 1 0 0 1 8.82 1h2.36a1 1 0 0 1 .98.804l.331 1.652a6.993 6.993 0 0 1 1.929 1.115l1.598-.54a1 1 0 0 1 1.186.447l1.18 2.044a1 1 0 0 1-.205 1.251l-1.267 1.113a7.047 7.047 0 0 1 0 2.228l1.267 1.113a1 1 0 0 1 .206 1.25l-1.18 2.045a1 1 0 0 1-1.187.447l-1.598-.54a6.993 6.993 0 0 1-1.929 1.115l-.33 1.652a1 1 0 0 1-.98.804H8.82a1 1 0 0 1-.98-.804l-.331-1.652a6.993 6.993 0 0 1-1.929-1.115l-1.598.54a1 1 0 0 1-1.186-.447l-1.18-2.044a1 1 0 0 1 .205-1.251l1.267-1.114a7.05 7.05 0 0 1 0-2.227L1.821 7.773a1 1 0 0 1-.206-1.25l1.18-2.045a1 1 0 0 1 1.187-.447l1.598.54A6.992 6.992 0 0 1 7.51 3.456l.33-1.652ZM10 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+                    clip-rule="evenodd"></path>
+                  </svg>
+                  <div class="truncate">Settings</div>
+                </a>
+              </div>
+            </div>
+            <div class="mt-20 flex-1"></div>
+            <div class="flex flex-col gap-0.5">
+              <div class="relative">
+                <a class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 sm:py-2 sm:text-sm/5" type="button" href="#">
+                  <div class="absolute left-1/2 top-1/2"></div>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" >
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0ZM8.94 6.94a.75.75 0 1 1-1.061-1.061 3 3 0 1 1 2.871 5.026v.345a.75.75 0 0 1-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 1 0 8.94 6.94ZM10 15a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd"></path>
+                  </svg>
+                  <div class="truncate">Support</div>
+                </a>
+              </div>
+              <div class="relative">
+                <a class="flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 sm:py-2 sm:text-sm/5" type="button" href="#">
+                  <div class="absolute left-1/2 top-1/2"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path d="M15.98 1.804a1 1 0 0 0-1.96 0l-.24 1.192a1 1 0 0 1-.784.785l-1.192.238a1 1 0 0 0 0 1.962l1.192.238a1 1 0 0 1 .785.785l.238 1.192a1 1 0 0 0 1.962 0l.238-1.192a1 1 0 0 1 .785-.785l1.192-.238a1 1 0 0 0 0-1.962l-1.192-.238a1 1 0 0 1-.785-.785l-.238-1.192ZM6.949 5.684a1 1 0 0 0-1.898 0l-.683 2.051a1 1 0 0 1-.633.633l-2.051.683a1 1 0 0 0 0 1.898l2.051.684a1 1 0 0 1 .633.632l.683 2.051a1 1 0 0 0 1.898 0l.683-2.051a1 1 0 0 1 .633-.633l2.051-.683a1 1 0 0 0 0-1.898l-2.051-.683a1 1 0 0 1-.633-.633L6.95 5.684ZM13.949 13.684a1 1 0 0 0-1.898 0l-.184.551a1 1 0 0 1-.632.633l-.551.183a1 1 0 0 0 0 1.898l.551.183a1 1 0 0 1 .633.633l.183.551a1 1 0 0 0 1.898 0l.184-.551a1 1 0 0 1 .632-.633l.551-.183a1 1 0 0 0 0-1.898l-.551-.184a1 1 0 0 1-.633-.632l-.183-.551Z">
+                      </path>
+                  </svg>
+                  <div class="truncate">Changelog</div>
+                </a>
+              </div>
+            </div>
+        </div>
+      </nav>
+    </div>
+    <!-- Main Section -->
+    <div class="flex flex-1 flex-col pb-2 lg:min-w-0 lg:pl-64 lg:pr-2 lg:pt-2">
+      <div class="grow p-6 lg:rounded-lg lg:bg-white lg:p-10 lg:shadow-sm lg:ring-1 lg:ring-zinc-950/5">
+        <div class="">
+          <div class="mx-auto max-w-6xl">
+            <div class="max-lg:hidden">
+              <a class="inline-flex items-center gap-2 text-sm/6 text-zinc-500" href="../events.html">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"vfill="currentColor" aria-hidden="true" class="size-4 fill-zinc-400">
+                  <path fill-rule="evenodd" d="M9.78 4.22a.75.75 0 0 1 0 1.06L7.06 8l2.72 2.72a.75.75 0 1 1-1.06 1.06L5.47 8.53a.75.75 0 0 1 0-1.06l3.25-3.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd"></path>
+                </svg>
+                Events
+              </a>
+            </div>
+            <div class="mt-4 flex flex-wrap items-end justify-between gap-4">
+              <div class="flex flex-wrap items-center gap-6">
+                <div class="w-32 shrink-0">
+                  <img class="aspect-[3/2] rounded-lg shadow" src="../assets//events/six-fingers.jpg" alt="">
+                </div>
+                <div>
+                  <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+                    <h1 class="text-2xl/8 font-semibold text-zinc-950 sm:text-xl/8">Six Fingers — DJ Set                    </h1>
+                    <span class="inline-flex items-center gap-x-1.5 rounded-md px-1.5 py-0.5 text-sm/5 font-medium sm:text-xs/5 forced-colors:outline bg-lime-400/20 text-lime-700">
+                    On Sale</span>
+                  </div>
+                  <div class="mt-2 text-sm/6 text-zinc-500">May 20, 2024 at 10 PM 
+                    <span aria-hidden="true">·</span> 
+                    Harmony Theater, Winnipeg, MB
+                  </div>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <button class="relative isolate inline-flex items-center justify-center gap-x-2 rounded-lg border text-base/6 font-semibold bg-white text-black px-4 py-2 hover:bg-zinc-100 focus:outline-none focus:ring-2 focus:ring-white">
+                  <span class="absolute left-1/2 top-1/2"></span>
+                  Edit
+                </button>
+                <button class="relative isolate inline-flex items-center justify-center gap-x-2 rounded-lg border text-base/6 font-semibold bg-black text-white px-4 py-2hover:bg-black focus:outline-none focus:ring-2 focus:ring-black">
+                  <span class="absolute left-1/2 top-1/2"></span>
+                  View
+                </button>
+              </div>
+            </div>
+            <div class="mt-8 grid gap-8 sm:grid-cols-3">
+              <div>
+                <hr role="presentation" class="w-full border-t border-zinc-950/10">
+                <div class="mt-6 text-lg/6 font-medium sm:text-sm/6">Total revenue</div>
+                <div class="mt-3 text-3xl/8 font-semibold sm:text-2xl/8">$102,552</div>
+                <div class="mt-3 text-sm/6 sm:text-xs/6">
+                  <span class="inline-flex items-center gap-x-1.5 rounded-md px-1.5 py-0.5 text-sm/5 font-medium sm:text-xs/5 forced-colors:outline bg-lime-400/20 text-lime-700">+3.2%</span>
+                  <span class="text-zinc-500">from last week</span>
+                </div>
+              </div>
+              <div>
+                <hr role="presentation" class="w-full border-t border-zinc-950/10">
+                <div class="mt-6 text-lg/6 font-medium sm:text-sm/6">Tickets sold</div>
+                <div class="mt-3 text-3xl/8 font-semibold sm:text-2xl/8">350/500</div>
+                <div class="mt-3 text-sm/6 sm:text-xs/6"><span
+                    class="inline-flex items-center gap-x-1.5 rounded-md px-1.5 py-0.5 text-sm/5 font-medium sm:text-xs/5 forced-colors:outline bg-lime-400/20 text-lime-700">+8.1%</span>
+                  <span class="text-zinc-500">from last week</span></div>
+              </div>
+              <div>
+                <hr role="presentation" class="w-full border-t border-zinc-950/10">
+                <div class="mt-6 text-lg/6 font-medium sm:text-sm/6">Pageviews</div>
+                <div class="mt-3 text-3xl/8 font-semibold sm:text-2xl/8">24,300</div>
+                <div class="mt-3 text-sm/6 sm:text-xs/6"><span
+                    class="inline-flex items-center gap-x-1.5 rounded-md px-1.5 py-0.5 text-sm/5 font-medium sm:text-xs/5 forced-colors:outline bg-pink-400/15 text-pink-700">-0.75%</span>
+                  <span class="text-zinc-500">from last week</span></div>
+              </div>
+            </div>
+            <h2 class="mt-12 text-base/7 font-semibold text-zinc-950 sm:text-sm/6 ">Recent orders</h2>
+            <div class="flow-root">
+              <div class="mt-4">
+                <div class="inline-block min-w-full align-middle">
+                  <table class="min-w-full text-left text-sm/6 text-zinc-950 ">
+                    <thead class="text-zinc-500">
+                      <tr class="">
+                        <th class="border-b border-b-zinc-950/10 px-4 py-2 font-medium">Order number</th>
+                        <th class="border-b border-b-zinc-950/10 px-4 py-2 font-medium">Purchase date</th>
+                        <th class="border-b border-b-zinc-950/10 px-4 py-2 font-medium">Customer</th>
+                        <th class="text-right border-b border-b-zinc-950/10 px-4 py-2 font-medium">Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="relative border-b border-b-zinc-950/10 px-4 py-4">
+                          <a class="absolute inset-0 focus:outline-none" href="/orders/3000"></a>3000</td>
+                        <td class="text-zinc-500 relative border-b border-b-zinc-950/10 px-4">
+                          <a class="absolute inset-0 focus:outline-none" href="/orders/3000"></a>May 9, 2024</td>
+                        <td class="relative border-b border-b-zinc-950/10 px-4">
+                          <a class="absolute inset-0 focus:outline-none" href="/orders/3000"></a>Leslie Alexander</td>
+                        <td class="text-right border-b border-b-zinc-950/10 relative px-4">
+                          <a class="absolute inset-0 focus:outline-none"href="/orders/3000"></a>US$80.00</td>
+                      </tr>
+                      <tr>
+                        <td class="relative border-b border-b-zinc-950/10 px-4 py-4">
+                          <a class="absolute inset-0 focus:outline-none" href="/orders/3000"></a>3000</td>
+                        <td class="text-zinc-500 relative border-b border-b-zinc-950/10 px-4">
+                          <a class="absolute inset-0 focus:outline-none" href="/orders/3000"></a>May 9, 2024</td>
+                        <td class="relative border-b border-b-zinc-950/10 px-4">
+                          <a class="absolute inset-0 focus:outline-none" href="/orders/3000"></a>Leslie Alexander</td>
+                        <td class="text-right border-b border-b-zinc-950/10 relative px-4">
+                          <a class="absolute inset-0 focus:outline-none"href="/orders/3000"></a>US$80.00</td>
+                      </tr>
+                      <tr>
+                        <td class="relative border-b border-b-zinc-950/10 px-4 py-4">
+                          <a class="absolute inset-0 focus:outline-none" href="/orders/3000"></a>3000</td>
+                        <td class="text-zinc-500 relative border-b border-b-zinc-950/10 px-4">
+                          <a class="absolute inset-0 focus:outline-none" href="/orders/3000"></a>May 9, 2024</td>
+                        <td class="relative border-b border-b-zinc-950/10 px-4">
+                          <a class="absolute inset-0 focus:outline-none" href="/orders/3000"></a>Leslie Alexander</td>
+                        <td class="text-right border-b border-b-zinc-950/10 relative px-4">
+                          <a class="absolute inset-0 focus:outline-none"href="/orders/3000"></a>US$80.00</td>
+                      </tr>
+                      <tr>
+                        <td class="relative border-b border-b-zinc-950/10 px-4 py-4">
+                          <a class="absolute inset-0 focus:outline-none" href="/orders/3000"></a>3000</td>
+                        <td class="text-zinc-500 relative border-b border-b-zinc-950/10 px-4">
+                          <a class="absolute inset-0 focus:outline-none" href="/orders/3000"></a>May 9, 2024</td>
+                        <td class="relative border-b border-b-zinc-950/10 px-4">
+                          <a class="absolute inset-0 focus:outline-none" href="/orders/3000"></a>Leslie Alexander</td>
+                        <td class="text-right border-b border-b-zinc-950/10 relative px-4">
+                          <a class="absolute inset-0 focus:outline-none"href="/orders/3000"></a>US$80.00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../JS/script.js"></script>
+
+</body>
+
+</html>
